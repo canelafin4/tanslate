@@ -1,0 +1,15 @@
+from googletrans import Translator
+
+translator = Translator()
+
+text = input("Digitar Texto: ")
+
+idioma = input("Digite o idioma: ")
+
+detected_lang = translator.detect(text).lang
+
+traducao = translator.translate(text, src=detected_lang, dest= idioma)
+
+print("Texto original:", text)
+print("Idioma detectado:", detected_lang)
+print(f'Texto traduzido para o {idioma}: ', traducao.text)
